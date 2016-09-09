@@ -1,0 +1,69 @@
+<div class="container" ng-controller="DetailCtrl">
+
+<div class="col-md-9">
+
+    <div class="row">
+        <div class="col-md-5">
+            <a href="">
+                <img src="{{movie.picture}}" class="img-rounded" width="300" height="500">
+            </a>
+        </div>
+        <div class="col-md-7">
+            <h2>{{movie.name}} (<span ng-hide="movie.score">no score yet</span><span ng-show="movie.score">{{movie.score}}%</span>)</h2>
+            <h3 ng-if="movie.production_company">{{movie.production_company}}</h3>
+
+            <h4>Description:</h4>
+            <p>{{movie.description}}</p>
+
+            <h4>Genre:</h4>
+            <p>
+            	<span ng-repeat="genre in movie.genre">
+	                {{genre.name}}<span ng-if="!$last">,</span><span ng-if="$last">.</span> 
+                </span>
+            </p>
+            <i ng-hide="movie.genre[0]">No genre.</i>
+
+            <h4>Director:</h4>
+            <p>
+            	<span ng-repeat="director in movie.director">
+	                {{director.name}}<span ng-if="!$last">,</span><span ng-if="$last">.</span> 
+                </span>
+            </p>
+            <i ng-hide="movie.director[0]">No director.</i>
+
+            <h4>Author:</h4>
+            <p>
+            	<span ng-repeat="author in movie.author">
+	                {{author.name}}<span ng-if="!$last">,</span><span ng-if="$last">.</span> 
+                </span>
+            </p>
+            <i ng-hide="movie.author[0]">No author.</i>
+
+            <h4>Cast:</h4>
+            <p>
+            	<span ng-repeat="actor in movie.actor">
+	                {{actor.name}}<span ng-if="!$last">,</span><span ng-if="$last">.</span> 
+                </span>
+            </p>
+            <i ng-hide="movie.actor[0]">No actor.</i>
+        
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+
+        	<h4>Critics:</h4>
+            <span ng-repeat="critic in movie.critics">
+                <h4><a href="{{critic.url}}" target="_blank">{{critic.publisher}}</a> - {{critic.author}}</h4>
+                <p>{{critic.text}}</p>
+                <hr>
+            </span>
+            <i ng-hide="movie.critics[0]">No critics.</i>
+
+        </div>
+    </div>
+
+</div>
+
+
+</div>

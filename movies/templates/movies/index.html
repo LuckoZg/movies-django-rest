@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<title>Movies</title>
+		<meta charset="utf-8">
+		<base href="/">
+
+		{% load staticfiles %}
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="{% static 'libs/font-awesome/css/font-awesome.min.css' %}">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="{% static 'libs/bootstrap/css/bootstrap.min.css' %}">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="{% static 'style.css' %}">
+	</head>
+	<body ng-controller="BodyCtrl">
+
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myTopNavbar" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="/">Movies</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myTopNavbar">
+		      <ul class="nav navbar-nav">
+		        <li ng-class="{'active': active.page == 'index'}"><a href="/">Top 5</a></li>
+		        <li ng-class="{'active': active.page == 'list'}"><a href="/list">List of all</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+
+		<div ng-view=""></div>
+
+		<!-- Jquery -->
+		<script src="{% static 'libs/jquery-2.1.4.min.js' %}"></script>
+		<!-- Bootstrap JS -->
+		<script src="{% static 'libs/bootstrap/js/bootstrap.min.js' %}"></script>
+
+		<!-- AngularJS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+		<script src="{% static 'app/js/app.js' %}"></script>
+
+		<!-- Services -->
+		<script src="{% static 'app/js/service/Movie.js' %}"></script>
+
+		<!-- Controllers -->
+		<script src="{% static 'app/js/controller/BodyCtrl.js' %}"></script>
+		<script src="{% static 'app/js/controller/IndexCtrl.js' %}"></script>
+		<script src="{% static 'app/js/controller/ListCtrl.js' %}"></script>
+		<script src="{% static 'app/js/controller/DetailCtrl.js' %}"></script>
+	</body>
+</html>

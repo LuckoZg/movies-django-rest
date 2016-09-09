@@ -1,0 +1,5 @@
+beautifulsoup4==4.5.1
+Django==1.10
+djangorestframework==3.4.6
+requests==2.11.1
+virtualenv==15.0.3

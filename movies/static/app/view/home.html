@@ -1,0 +1,24 @@
+<div class="container" ng-controller="IndexCtrl">
+
+<div class="col-md-8">
+
+    <span ng-repeat="movie in movies">
+    <div class="row">
+        <div class="col-md-3">
+            <a href="/{{movie.id}}">
+                <img ng-src="{{movie.picture}}" class="img-rounded" width="130" height="200">
+            </a>
+        </div>
+        <div class="col-md-9">
+            <h3>{{(movie.position+1)}}. {{movie.name}} (<span ng-hide="movie.score">no score yet</span><span ng-show="movie.score">{{movie.score}}%</span>)</h3>
+            <h4 ng-if="movie.production_company">{{movie.production_company}}</h4>
+            <p>{{movie.description}}</p>
+            <a class="btn btn-primary" href="/{{movie.id}}">More <span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
+    </div>
+    <hr>
+    </span>
+
+</div>
+
+</div>

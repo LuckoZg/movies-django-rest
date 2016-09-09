@@ -1,0 +1,23 @@
+<div class="container" ng-controller="ListCtrl">
+
+		<div class="row">
+
+	        <div ng-repeat="movie in movies">
+
+	        	<div class="clearfix" ng-if="$index % 6 == 0"></div>
+
+	        	<div class="col-md-2 portfolio-item">
+		            <a href="/{{movie.id}}">
+		                <img src="{{movie.picture}}" class="img-rounded" width="130" height="200">
+		            </a>
+		            <h4>
+		                <a href="/{{movie.id}}">{{movie.name}} (<span ng-hide="movie.score">no score yet</span><span ng-show="movie.score">{{movie.score}}%</span>)</a>
+		            </h4>
+		            <br>
+	            </div>
+	            
+	        </div>
+	        
+	    </div>
+
+</div>
